@@ -1,13 +1,18 @@
+import Education from "./components/Education";
+import Skills from "./components/Skills";
 import MyImage from "./images/aj.png";
 
 function About() {
   return (
-    <div className="flex-container flex flex-col items-center justify-center gap-2 bg-hard h-auto lg:h-screen py-14 lg:py-0">
+    <div className="flex-container flex flex-col items-center justify-center gap-2 bg-hard min-h-screen py-14 lg:py-32">
       <div className="flex flex-col lg:flex-row mx-auto gap-4 lg:gap-2 items-center justify-center pt-4">
         <div className="relative order-1 lg:order-1 h-auto lg:h-[200px] w-11/12 lg:w-[200px] rounded-2xl z-10">
-          <div className="hidden lg:block absolute -left-60 -top-32 text-white text-9xl font-black font-sans backdrop-blur-sm opacity-5 z-0">
-            ABOUT
+          <div className="absolute -top-16 font-primary font-semibold text-4xl uppercase text-white mt-5 mb-3">
+            About
           </div>
+          {/* <div className="hidden lg:block absolute -left-60 -top-32 text-white text-9xl font-black font-sans backdrop-blur-sm opacity-5 z-0">
+            ABOUT
+          </div> */}
           <img
             className="mx-auto h-[100px] lg:h-[200px] rounded-2xl"
             src={MyImage}
@@ -15,15 +20,15 @@ function About() {
           />
         </div>
         <div className="order-3 lg:order-2 bg-soft h-auto lg:h-[200px] w-11/12 lg:w-[500px] rounded-2xl text-white p-3 z-10">
-          <div className="text-2xl font-san font-semibold uppercase">
+          <div className="text-2xl font-primary font-semibold uppercase">
             I’m Aaron James Bumagat
           </div>
-          <p className="font-medium">I will either find a way, or make one</p>
-          <p className="mt-3">
+          <p className="font-medium font-primary">I will either find a way, or make one</p>
+          <p className="mt-3 font-primary">
             A dedicated and industrious undergraduate pursuing a Bachelor of
             Science in Information Technology, driven by a strong passion for
             developing web applications, designing user interfaces, and crafting
-            engaging user experiences.{" "}
+            engaging user experiences.
           </p>
         </div>
         <div className="order-2 lg:order-3 flex flex-row lg:flex-col gap-2 ">
@@ -83,72 +88,9 @@ function About() {
           </div>
         </div>
       </div>
-      <div className="text-white bg-soft h-auto w-11/12 lg:w-[920px] rounded-2xl p-4">
-        <div className="font-sans font-semibold text-2xl uppercase">
-          Education
-        </div>
-        {/* <div className="relative mt-10 mb-2">
-          <hr  className="border-secondary" />
-          <div className="flex gap-2">
-            <div className="basis-1/4 ps-6">
-              <span className="relative flex h-4 w-4">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-4 w-4 bg-secondary"></span>
-              </span>
-            </div>
-            <div className="basis-1/4 ps-6">
-              <span className="relative flex h-4 w-4">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-4 w-4 bg-secondary"></span>
-              </span>
-            </div>
-            <div className="basis-1/4 ps-6">
-              <span className="relative flex h-4 w-4">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-4 w-4 bg-secondary"></span>
-              </span>
-            </div>
-            <div className="basis-1/4 ps-6">
-              <span className="relative flex h-4 w-4">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-4 w-4 bg-secondary"></span>
-              </span>
-            </div>
-          </div>
-        </div> */}
-        <div className="flex flex-col lg:flex-row gap-7 lg:gap-2 mt-2">
-          <div className="basis-1/4">
-            <small className="font-sans font-bold italic">2008-2014</small>
-            <div className="font-sans font-bold text-primary text-md">
-              Elementary
-            </div>
-            <p className="font-sans">Cataggaman Elementary School</p>
-          </div>
-          <div className="basis-1/4">
-            <small className="font-sans font-bold italic">2008-2014</small>
-            <div className="font-sans font-bold text-primary text-md">
-              Junior High School
-            </div>
-            <p className="font-sans">Cataggaman National High School</p>
-          </div>
-          <div className="basis-1/4">
-            <small className="font-sans font-bold italic">2008-2014</small>
-            <div className="font-sans font-bold text-primary text-md">
-              Senior High School (TVL-ICT)
-            </div>
-            <p className="font-sans">Cataggaman National High School</p>
-          </div>
-          <div className="basis-1/4">
-            <small className="font-sans font-bold italic">2008-2014</small>
-            <div className="font-sans font-bold text-primary text-md">
-              Bachelor of Science in Information Technology
-            </div>
-            <p className="font-sans">University of Saint Louis Tuguegarao</p>
-          </div>
-        </div>
-      </div>
+      <Education />
+      <Skills />
     </div>
-  
   );
 }
 export default About;
