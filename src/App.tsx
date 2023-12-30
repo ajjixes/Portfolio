@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 import { Logo } from "./components/Logo";
 import "./index.css";
 import { ContactUs } from "./Contact";
-import { motion } from "framer-motion";
+
 function App() {
   return (
     <div className="relative select-none scroll-smooth bg-hard custom-main-scroll overflow-hidden">
