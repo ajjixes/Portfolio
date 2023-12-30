@@ -2,20 +2,34 @@ import About from "./About";
 import Header from "./Header";
 import Project from "./Project";
 import Navbar from "./components/Navbar";
-// import MyImage from "./images/aj.png";
-
+import { Logo } from "./components/Logo";
+import "./index.css";
+import { ContactUs } from "./Contact";
+import { motion } from "framer-motion";
 function App() {
   return (
-    <div className="scroll-smooth bg-hard">
-      <h1 className="hidden sm:block fixed top-10 left-9 md:left-11 text-xl text-white font-bold font-mono">
-        AJ<b className="font-black text-secondary text-3xl leading-3">.</b>
-      </h1>
+    <div className="relative select-none scroll-smooth bg-hard custom-main-scroll overflow-hidden">
+      {/* <div className=" absolute top-[1000px] -left-[50px] w-[200px] h-[200px] bg-primary/40 rounded-full blur-3xl z-20"></div>
+      <div className=" absolute top-[2000px] -right-[50px] w-[330px] h-[330px] bg-primary/30 rounded-full blur-3xl z-20"></div>
+      <div className=" absolute top-[100px] left-0 w-[250px] h-[250px] bg-primary rounded-full blur-3xl z-20"></div> */}
+      {/* <div className=" absolute -top-[100px] left-[900px] w-[250px] h-[250px] bg-secondary rounded-full blur-3xl z-20"></div> */}
+      
+      <Logo />
 
-      {/* <img className="fixed top-8 right-7 w-[50px] h-[50px] rounded-full" src={MyImage} alt="" /> */}
       <Navbar />
-      <Header />
-      <About />
-      <Project />
+      <section id="Header">
+        <Header />
+      </section>
+      <section id="About">
+        <About />
+      </section>
+      <section id="Project"></section>
+      <section id="Project">
+        <Project />
+      </section>
+      <section id="Contact">
+        <ContactUs />
+      </section>
     </div>
   );
 }

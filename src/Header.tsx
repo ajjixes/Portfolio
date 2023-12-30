@@ -1,7 +1,14 @@
 import TextScrambleComponent from "./components/Text";
-function Header() {
+import { motion } from "framer-motion";
+
+const Header = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-hard text-white">
+    <motion.div
+      initial={{scale: 2, opacity: 0 }}
+      whileInView={{scale: 1, opacity: 1 }}
+      transition={{ duration: 0.8, ease: "backInOut" }}
+      className="relative flex flex-col items-center justify-center h-screen text-white"
+    >
       <div className="flex text-5xl md:text-8xl font-medium font-sans ">
         AJ <p className="text-primary">BUMAGAT</p>
       </div>
@@ -9,7 +16,10 @@ function Header() {
         I AM WEB
         <TextScrambleComponent />
       </div>
-      <div className="animate-bounce absolute bottom-0 mb-8 border-2 py-6 px-2 rounded-full">
+      <a
+        href="#About"
+        className="animate-bounce absolute bottom-0 mb-8 border-2 py-6 px-2 rounded-full z-20"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 16 16"
@@ -22,9 +32,9 @@ function Header() {
             clipRule="evenodd"
           />
         </svg>
-      </div>
-    </div>
+      </a>
+    </motion.div>
   );
-}
+};
 
 export default Header;
