@@ -137,16 +137,24 @@ const Project = () => {
               {/* mobile size */}
               <div className="block lg:hidden">
                 {projectImages2.map((image2, index) => (
-                  <div
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.8, ease: "backInOut" }}
                     key={index}
                     className="flex items-center"
                   >
                     <img className="rounded-xl shadow-md" src={image2} alt="" />
-                  </div>
+                  </motion.div>
                 ))}
               </div>
               {/* desktop size */}
-              <div className="snap-y snap-mandatory duration-100 hidden lg:block h-full  overflow-x-hidden custom-scrollbar">
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.8, ease: "backInOut" }}
+                className="snap-y snap-mandatory duration-100 hidden lg:block h-full  overflow-x-hidden custom-scrollbar"
+              >
                 {projectImages.map((image, index) => (
                   <div
                     key={index}
@@ -159,7 +167,7 @@ const Project = () => {
                     />
                   </div>
                 ))}
-              </div>
+              </motion.div>
             </div>
 
             <div className="w-full lg:w-[400px] px-4 lg:px-0">
