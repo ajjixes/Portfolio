@@ -19,16 +19,7 @@ const About = () => {
           />
         </motion.div>
 
-        <motion.div
-          initial={{ x: 0, y: 0, scale: 0, rotate: 0 }}
-          whileInView={{ x: 0, y: 0, scale: 1, rotate: 0 }}
-          transition={{ delay: 0.1 }}
-          whileHover={{ x: 0, y: 50, scale: 1.2 }}
-          whileTap={{
-            scale: 1.1,
-          }}
-          className="select-none group hover:bg-white hover:text-hard duration-75 hover:border-hard order-3 lg:order-2 bg-soft h-auto lg:h-[200px] w-11/12 lg:w-[500px] rounded-2xl text-white p-4 z-10"
-        >
+        <div className="select-none group hover:bg-white hover:text-hard duration-300 hover:border-hard order-3 lg:order-2 bg-soft h-auto lg:h-[200px] w-11/12 lg:w-[500px] rounded-2xl text-white p-4 z-10">
           <div className="text-xl font-primary font-semibold uppercase">
             I’m Aaron James Bumagat
           </div>
@@ -41,7 +32,7 @@ const About = () => {
             developing web applications, designing user interfaces, and crafting
             engaging user experiences.
           </p>
-        </motion.div>
+        </div>
 
         <div className="order-2 lg:order-3 flex flex-row lg:flex-col gap-2 ">
           <div className="flex gap-2">

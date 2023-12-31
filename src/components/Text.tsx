@@ -98,7 +98,7 @@ const TextScrambleComponent: React.FC = () => {
   }, []);
 
   return (
-    <div ref={textRef} className="text text-lg md:text-2xl font-sans text-secondary"></div>
+    <div ref={textRef} className=" text-secondary"></div>
   );
 };
 

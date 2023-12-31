@@ -112,7 +112,7 @@ const programmingLan = [
   { id: 2, language: ["Figma"] },
   { id: 3, language: ["Figma"] },
   { id: 4, language: ["Laravel", "Bootstrap", "CSS", "MySQL", "C#"] },
-  { id: 5, language: ["React","TypeScript", "Tailwind CSS"] },
+  { id: 5, language: ["React", "TypeScript", "Tailwind CSS"] },
 ];
 
 const Project = () => {
@@ -137,44 +137,27 @@ const Project = () => {
               {/* mobile size */}
               <div className="block lg:hidden">
                 {projectImages2.map((image2, index) => (
-                  <motion.div
-                    initial={{ x: -100, y: 0, scale: 1, opacity: 0 }}
-                    whileInView={{
-                      x: 0,
-                      y: 0,
-                      scale: 1,
-                      opacity: 1,
-                    }}
-                    transition={{ duration: 0.8, ease: "backInOut" }}
+                  <div
                     key={index}
                     className="flex items-center"
                   >
                     <img className="rounded-xl shadow-md" src={image2} alt="" />
-                  </motion.div>
+                  </div>
                 ))}
               </div>
               {/* desktop size */}
-              <div className="hidden lg:block h-full  overflow-x-hidden custom-scrollbar">
+              <div className="snap-y snap-mandatory duration-100 hidden lg:block h-full  overflow-x-hidden custom-scrollbar">
                 {projectImages.map((image, index) => (
-                  <motion.div
-                    initial={{ x: -100, y: 0, scale: 1, rotate: 0, opacity: 0 }}
-                    whileInView={{
-                      x: 0,
-                      y: 0,
-                      scale: 1,
-                      rotate: 0,
-                      opacity: 1,
-                    }}
-                    transition={{ duration: 1 }}
+                  <div
                     key={index}
-                    className="md:h-screen flex items-center"
+                    className="snap-always snap-center  md:h-screen flex items-center"
                   >
                     <img
-                      className="rounded-xl shadow-md my-10 ms-auto"
+                      className="xl:h-[500px] rounded-xl shadow-md my-10 ms-auto"
                       src={image}
                       alt=""
                     />
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </div>

@@ -11,11 +11,16 @@ export const ContactUs: React.FC = () => {
     user_email: "",
     message: "",
   });
+  const [isButtonDisabled, setButtonDisabled] = useState(false);
+  const [isSent, setSent] = useState(false);
 
   const sendEmail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (form.current) {
+      setButtonDisabled(true);
+      setSent(false);
+
       emailjs
         .sendForm(
           "service_aycbhrh",
@@ -27,14 +32,21 @@ export const ContactUs: React.FC = () => {
           (result) => {
             console.log(result.text);
             console.log("message sent");
-            setInputValues({
-              user_name: "",
-              user_email: "",
-              message: "",
-            });
+            setSent(true);
+
+            setTimeout(() => {
+              setInputValues({
+                user_name: "",
+                user_email: "",
+                message: "",
+              });
+              setButtonDisabled(false);
+              setSent(false);
+            }, 3000);
           },
           (error) => {
             console.log(error.text);
+            setButtonDisabled(false);
           }
         );
     }
@@ -59,24 +71,61 @@ export const ContactUs: React.FC = () => {
   }, [inputValues]);
 
   return (
-    <div className="relative h-auto md:h-screen flex flex-col items-center justify-center">
+    <div className="pb-20 md:pb-0 relative h-auto md:h-screen flex flex-col items-center justify-center">
+      {/** Error */}
+
+      {isSent && (
+        <div
+          id="alert-1"
+          className="absolute bottom-0 right-0 m-5 flex items-center p-4 mb-4 text-primary rounded-lg bg-blue-50 dark:bg-soft dark:text-blue-400"
+          role="alert"
+        >
+          <span className="sr-only">Info</span>
+          <div className="text-sm font-medium mx-5">Message Send</div>
+          <button
+            type="button"
+            className="ms-auto -mx-1.5 -my-1.5 bg-blue-50 text-blue-500 rounded-lg focus:ring-2 focus:ring-blue-400 p-1.5 hover:bg-blue-200 inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800 dark:text-blue-400 dark:hover:bg-gray-700"
+            data-dismiss-target="#alert-1"
+            aria-label="Close"
+          >
+            <span className="sr-only">Close</span>
+            <svg
+              className="w-3 h-3"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 14"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+              />
+            </svg>
+          </button>
+        </div>
+      )}
+
+      {/** Error */}
       <motion.div
         initial={{ scale: 1.2, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.8, ease: "backInOut" }}
         className="flex flex-col md:flex-row"
       >
-        <div className="relative order-2 md:order-1 flex flex-col bg-white md:w-[400px] p-4 md:rounded-l-xl">
+        <div className="relative flex flex-col bg-white md:w-[400px] p-4 md:rounded-l-xl">
           <div className="absolute bottom-0 right-1 hidden sm:block">
             <img className="w-[295px]" src={contact} alt="" />
           </div>
           <div className="font-primary font- text-4xl my-8">Let’s talk.</div>
           <p className="font-primary font z-10">
-            Hello there! I'm Aaron James Bumagat, a passionate 21-year-old web developer and
-            designer. Have a project in mind or seeking a creative solution for
-            your website? I'm here to help! Let's discuss your ideas, brainstorm
-            together, and create something amazing. —I'm excited to hear from
-            you!
+            Hello there! I'm Aaron James Bumagat, a passionate 21-year-old web
+            developer and designer. Have a project in mind or seeking a creative
+            solution for your website? I'm here to help! Let's discuss your
+            ideas, brainstorm together, and create something amazing. —I'm
+            excited to hear from you!
           </p>
           <div className="flex mt-10 md:mt-auto mb-2">
             <motion.div
@@ -169,7 +218,7 @@ export const ContactUs: React.FC = () => {
             </motion.div>
           </div>
         </div>
-        <form className="order-1 md:order-2" ref={form} onSubmit={sendEmail}>
+        <form ref={form} onSubmit={sendEmail}>
           <div className="bg-soft md:w-[350px] p-4 md:rounded-r-xl">
             <div className="relative font-primary my-4 shadow-md">
               <input
@@ -214,14 +263,16 @@ export const ContactUs: React.FC = () => {
               className={`text-white w-full mt-20 h-[50px] rounded-md ${
                 isFormValid ? "bg-primary" : "bg-primary/50"
               } ${isFormValid ? "" : "cursor-not-allowed"}`}
-              disabled={!isFormValid}
+              disabled={!isFormValid || isButtonDisabled}
             >
               Send
             </button>
           </div>
         </form>
       </motion.div>
-      <div className="absolute bottom-3 text-white font-primary z-10">© 2023 - Aaron James Bumagat</div>
+      <div className="absolute bottom-3 text-white font-primary z-10 text-xs">
+        © 2023 - Aaron James Bumagat
+      </div>
     </div>
   );
 };

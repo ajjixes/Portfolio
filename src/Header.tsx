@@ -12,9 +12,9 @@ const Header = () => {
       <div className="flex text-5xl md:text-8xl font-medium font-sans ">
         AJ <p className="text-primary">BUMAGAT</p>
       </div>
-      <div className="flex gap-2 text text-lg md:text-2xl font-primary">
-        I AM WEB
-        <TextScrambleComponent />
+      <div className="flex items-center justify-center gap-2 text text-lg md:text-2xl font-primary">
+        <div>I AM WEB</div>
+        <div><TextScrambleComponent /></div>
       </div>
       <a
         href="#About"
