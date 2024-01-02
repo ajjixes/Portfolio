@@ -101,7 +101,7 @@ const projects = [
   {
     id: 5,
     name: "Portfolio",
-    role: "Full-stack Developer",
+    role: "Front-end Developer",
     type: "Website",
     description:
       "My portfolio is a collection showcasing my expertise in web development and design. It's a testament to my dedication, creativity, and problem-solving abilities.",
