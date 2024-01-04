@@ -75,14 +75,7 @@ body {
   margin: 0;
   padding: 0;
 }
-::-webkit-selection {
-  background-color: #605BFF;
-  color: #fff; /* optional: set the text color */
-}
-::selection {
-  background-color: #605BFF;
-  color: #fff; /* optional: set the text color */
-}
+
 /* scroll */
 ::-webkit-scrollbar {
   width: 5px; /* Width of the scrollbar */
@@ -90,7 +83,7 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #fff; /* Color of the track (the area behind the scrollbar) */
+  background: #0C1120; /* Color of the track (the area behind the scrollbar) */
 }
 
 /* Handle */
