@@ -3,5 +3,5 @@
 }
 
 .custom-scrollbar::-webkit-scrollbar {
-  display: none; /* For WebKit browsers (Chrome, Safari) */
+  display: none; 
 }

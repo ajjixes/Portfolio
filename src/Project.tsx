@@ -65,6 +65,7 @@ const listProject = [
   {
     id: 5,
     path: [portfolio],
+    name: "Portfolio",
     role: "Front-end Developer",
     type: "Website",
     description:
@@ -79,7 +80,7 @@ const Project = () => {
       {listProject.map((projects, index) => (
         <div
           key={index}
-          className="flex flex-col gap-5 lg:gap-0 lg:flex-row  items-center justify-center h-auto lg:h-screen my-20 lg:my-0 mx-4 lg:mx-0"
+          className="relative flex flex-col gap-5 lg:gap-0 lg:flex-row  items-center justify-center h-auto lg:h-screen my-20 lg:my-0 mx-4 lg:mx-0"
         >
           <div className="relative w-full lg:w-[800px] px-14 h-auto lg:h-screen overflow-hidden">
             <div className="hidden lg:block absolute top-0 bg-gradient-to-b from-hard min-w-full h-[100px] z-10"></div>
@@ -93,7 +94,11 @@ const Project = () => {
                 key={index}
                 className="flex items-center"
               >
-                <img className="rounded-xl shadow-md" src={projects.path[0]} alt="" />
+                <img
+                  className="rounded-xl shadow-md"
+                  src={projects.path[0]}
+                  alt=""
+                />
               </motion.div>
             </div>
             {/* desktop size */}
