@@ -10,10 +10,10 @@ const achievements = [
     name: "Top startup finalists for iDeaTech Challenge 2023 ",
     year: "2023",
   },
-  {
-    name: "National Qualifier for ICITE 2023",
-    year: "2023",
-  },
+  // {
+  //   name: "National Qualifier for ICITE 2023",
+  //   year: "2023",
+  // },
   {
     name: "Google Developer Students Club Officer",
     year: "2022 - 2024",

@@ -53,7 +53,7 @@ const Navbar: React.FC = () => {
         initial={{ x: 0, y: -100, scale: 1, opacity: 0 }}
         animate={{ x: 0, y: 0, scale: 1, opacity: 1 }}
         transition={{ duration: 0.8, ease: "backInOut" }}
-        className="backdrop-blur-md bg-soft/30 w-[200px] h-[50px] mx-auto rounded-2xl shadow-lg flex items-center justify-center gap-5 px-7"
+        className="backdrop-blur-md bg-soft w-[200px] h-[50px] mx-auto rounded-xl flex items-center justify-center gap-5 px-7"
       >
         <motion.div
           whileHover={{ scale: 1.4 }}
