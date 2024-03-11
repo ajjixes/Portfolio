@@ -69,6 +69,7 @@ export const ContactUs: React.FC = () => {
     );
     setIsFormValid(isValid);
   }, [inputValues]);
+  const currentYear = new Date().getFullYear();
 
   return (
     <div className="pb-20 md:pb-0 relative h-auto md:h-screen flex flex-col items-center justify-center">
@@ -271,7 +272,7 @@ export const ContactUs: React.FC = () => {
         </form>
       </motion.div>
       <div className="absolute bottom-3 text-white font-primary z-10 text-xs">
-        © 2023 - Aaron James Bumagat
+        © {currentYear} - Aaron James Bumagat
       </div>
     </div>
   );
